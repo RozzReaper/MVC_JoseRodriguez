@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Controllers\Products;
 
 use Controllers\PublicController;
