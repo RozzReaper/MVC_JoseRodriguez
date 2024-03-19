@@ -11,8 +11,8 @@
         <input type="text" name="category_name" id="category_name" value="{{category_name}}">
         </div>&nbsp;
         <div class="row">
-            <label for="category_small_desc">Descripcion</label>
-            <input type="text" name="category_small_desc" id="category_small_desc" value="{{category_small_desc}}">
+            <label for="category_smal_desc">Descripcion</label>
+            <input type="text" name="category_smal_desc" id="category_smal_desc" value="{{category_smal_desc}}">
         </div>&nbsp;
         <div class="row">
             <label for="category_status">Status</label>

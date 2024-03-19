@@ -2,24 +2,20 @@
 
 namespace Controllers;
 
-use Dao\Products\Product;
-use Views\Renderer;
+use \Dao\Products\Products as ProductsDao;
+use \Views\Renderer as Renderer;
+use \Utilities\Site as Site;
 
-class HomeController extends PublicController{
-
-    public function run(): void
-    {
-       /* Product::createProduct('ELEC002', "Mouse Gamer 3000X", 600.50, "DISPONIBLE"); */
-
-        $viewData = [
-            "nombre"=>"José Leonardo Rodriguez Zelaya",
-            "mensaje"=>"Landing Page de Negocio de Electronicos.",
-            "product"=> Product::getAllProducts()
-        ];
-
-        Renderer::render('home', $viewData);
-        
-    }
+class HomeController extends PublicController
+{
+  public function run(): void
+  {
+    Site::addLink("public/css/products.css");
+    $viewData = [];
+    $viewData["productsOnSale"] = ProductsDao::getDailyDeals();
+    $viewData["productsHighlighted"] = ProductsDao::getFeaturedProducts();
+    $viewData["productsNew"] = ProductsDao::getNewProducts();
+    Renderer::render("home", $viewData);
+  }
 }
-
 ?>

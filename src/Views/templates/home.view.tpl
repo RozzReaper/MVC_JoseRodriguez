@@ -1,27 +1,36 @@
-<h1>Landing Page de Negocio de Electronicos</h1>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium numquam sapiente blanditiis voluptas provident facilis quibusdam magni adipisci dolorem, doloribus est ut totam veniam nam accusamus atque molestiae maxime exercitationem?</p>
-<table>
-    <thead>
-        <tr>
-            <th>Nombre</th>
-            <th>Mensaje</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-                {{nombre}}
-            </td>
-            <td>
-                {{mensaje}}
-            </td>
-        </tr>
-    </tbody>
-    <section>
-        {{foreach product}}
-        <div>
-            <strong>{{product_id}} {{nombre}} {{precio}}</strong>
+<h1>Ofertas del Día</h1>
+    <div class="product-list">
+        {{foreach productsOnSale}}
+        <div class="product" data-productId="{{productId}}">
+            <img src="{{productImgUrl}}" alt="{{productName}}">
+            <h2>{{productName}}</h2>
+            <p>{{productDescription}}</p>
+            <span class="price">{{productPrice}}</span>
+            <button class="add-to-cart">Agregar al Carrito</button>
         </div>
-        {{endfor product}}
-    </section>
-</table>
+        {{endfor productsOnSale}}
+    </div>
+    <h1>Destacados</h1>
+    <div class="product-list">
+        {{foreach productsHighlighted}}
+        <div class="product" data-productId="{{productId}}">
+            <img src="{{productImgUrl}}" alt="{{productName}}">
+            <h2>{{productName}}</h2>
+            <p>{{productDescription}}</p>
+            <span class="price">{{productPrice}}</span>
+            <button class="add-to-cart">Agregar al Carrito</button>
+        </div>
+        {{endfor productsHighlighted}}
+    </div>
+    <h1>Novedades</h1>
+    <div class="product-list">
+        {{foreach productsNew}}
+        <div class="product" data-productId="{{productId}}">
+            <img src="{{productImgUrl}}" alt="{{productName}}">
+            <h2>{{productName}}</h2>
+            <p>{{productDescription}}</p>
+            <span class="price">{{productPrice}}</span>
+            <button class="add-to-cart">Agregar al Carrito</button>
+        </div>
+        {{endfor productsNew}}
+    </div>

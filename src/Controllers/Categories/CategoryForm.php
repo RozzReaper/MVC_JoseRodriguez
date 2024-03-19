@@ -38,7 +38,7 @@ class CategoryForm extends PublicController
             $categoria = \Dao\Productos\Categories::getCategory($this->categoryId);
             if ($categoria){
                 $this ->categoryName = $categoria["category_name"];
-                $this ->categorySmallDesc = $categoria["category_small_desc"];
+                $this ->categorySmallDesc = $categoria["category_smal_desc"];
                 $this ->categoryStatus = $categoria["category_status"];
             }
         }
@@ -49,7 +49,7 @@ class CategoryForm extends PublicController
         $viewData["modeDesc"] = sprintf($this->modeOptions[$this->mode], $this->categoryId, $this->categoryName);
         $viewData["category_id"] = $this->categoryId;
         $viewData["category_name"] = $this->categoryName;
-        $viewData["category_small_desc"] = $this->categorySmallDesc;
+        $viewData["category_smal_desc"] = $this->categorySmallDesc;
         $viewData["category_status"] = $this->categoryStatus;
 
         foreach($this->categoryStatusOptions as $value => $text){
